@@ -8,7 +8,7 @@ import './App.css';
 class HelpAlert extends Component {
   render() {
     return (
-      <div className="help-alert">
+      <div className="help-alert fadeInLeft">
         <span>
           <img className="picture" src={this.props.pic} />
           <p> Hey, <b>{this.props.studentName}</b> could use a helping hand! </p>

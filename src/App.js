@@ -3,7 +3,7 @@ import Card from './Card';
 import CourseName from './CourseName';
 import StudentCard from './StudentCard';
 import Header from './Header';
-import AnaPic from './images/ana-2x.jpg';
+import AnaPic from './images/simon-2x.jpg';
 import HelpAlert from './HelpAlert';
 import AssignmentName from './AssignmentName';
 import ProgressBody from './ProgressBody'
@@ -37,7 +37,7 @@ class App extends Component {
           <CourseName />
           {this.state.error && <HelpAlert
             pic={AnaPic}
-            studentName={"Ana"}
+            studentName={"Simon"}
             // studentId={returnedId}
           />}
             <div className="window-holder">
