@@ -1,28 +1,266 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  text-align: left;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
 }
 
 .App-header {
-  background-color: #222;
-  height: 150px;
+  background-color: white;
+  height: 50px;
   padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: absolute;
+  left: 8%;
+  width: 100%;
 }
 
 .App-intro {
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.holder {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 75%;
+}
+
+.window-holder {
+  margin-top: 24px;
+  display: flex;
+  /* width: 855px; */
+  height: 480px;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px 0 rgba(0, 34, 91, 0.11);
+  background-color: #ffffff;
+  border: solid 1px #e2e8ee;
+  flex-direction: column;
+}
+
+.help-alert {
+  /* width: 855px; */
+  height: 62px;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px 0 rgba(0, 34, 91, 0.11);
+  background-color: #ffffff;
+  /* border: solid 1px #e2e8ee; */
+  margin-bottom: 12px;
+  box-sizing: border-box;
+  border-left: 3px solid #ef081a;
+  display: flex;
+  justify-content: space-between;
+}
+
+.help-alert img, .help-alert p {
+  top: 0px;
+  align-self: center;
+  display: inline-block;
+}
+
+.assignment-name {
+  width: 100%;
+  border-bottom: 3px solid #e2e8ee;
+  font-family: MaaxTrial;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 1px;
+  color: #333333;
+  -webkit-text-stroke: 0.3px #979797;
+  display: flex;
+  justify-content: space-between;
+  flex: 0.16
+}
+
+.assignment-name span
+{
+  position: relative;
+  top: 24px;
+  left: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.right-chevron {
+  margin-left: 6px;
+}
+
+.left-chevron {
+  margin-right: 6px;
+}
+
+.assignment-navigation, .right-style {
+  position: relative;
+  top: 24px;
+  right: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.help-alert span {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  left: 30px;
+}
+
+.help-alert img.picture {
+  height: 40px;
+  width: 40px;
+}
+
+.help-alert p {
+  font-family: MaaxTrial;
+  font-size: 18px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #333333;
+  position: relative;
+  left: 14px;
+}
+
+.progress-body {
+  flex: 0.84;
+}
+
+.progress-body {
+  display: flex;
+}
+
+.left-progress {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.student-progress-title {
+  flex: 1;
+  text-align: left;
+  border-right: 3px solid #e2e8ee;
+}
+
+.student-progress-title p, .class-progress-title p {
+  padding-left: 20px;
+  top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.student-progress-body {
+  flex: 5;
+  display: flex;
+  flex-direction: column;
+  border-right: 3px solid #e2e8ee;
+}
+
+.individual-student-card {
+  flex: 1;
+  margin: 5px;
+  justify-content: space-between;
+  display: flex;
+}
+
+.individual-left-info {
+  display: flex;
+  flex: 1;
+  padding-left: 20px;
+}
+
+.individual-left-info p {
+  font-family: MaaxTrial;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #333333;
+  position: relative;
+  top: 8px;
+  margin: 0;
+}
+
+.individual-student-card img {
+  height: 40px;
+  width: 40px;
+  align-self: center;
+}
+
+.name-dot-body {
+  position: relative;
+  left: 14px;
+  display: flex;
+  flex-direction: column;
+}
+
+.name-dot-body p {
+  flex: 1.2;
+}
+
+.dot-container {
+  flex: 1;
+}
+
+.green-circle {
+  height: 14px;
+  width: 14px;
+  display: inline-block;
+  border-radius: 50%;
+  background-color: #107e7a;
+  margin: 2px;
+}
+
+.red-circle {
+  height: 14px;
+  width: 14px;
+  display: inline-block;
+  border-radius: 50%;
+  background-color: #ef081a;
+  margin: 2px;
+}
+
+.individual-right-info {
+  flex: 0.3;
+}
+
+.lozenge {
+  height: 22px;
+  width: auto;
+  border-radius: 12px;
+  border: 1px solid #757575;;
+  position: relative;
+  top: 50%;
+  transform: translate(-50%);
+  text-align: center;
+  display: inline-block;
+}
+
+.lozenge p {
+  font-size: 10px;
+  font-weight: bold;
+  display: inline-block;
+  margin: 5px 8px 5px 8px;
+}
+
+.right-progress {
+  flex: 0.65;
+  display: flex;
+  flex-direction: column;
+}
+
+.class-progress-title {
+  flex: 1;
+}
+
+.class-progress-body {
+  flex: 5;
 }
