@@ -8,7 +8,7 @@ import HelpAlert from './HelpAlert';
 import AssignmentName from './AssignmentName';
 import ProgressBody from './ProgressBody'
 import './App.css';
-
+import { exerRef } from "./firebase";
 
 //component did Mount --
   // check database to see if anyone needs help
@@ -16,17 +16,30 @@ import './App.css';
   // or if someone has specifically requested help
    // get studentId of the person that needs help
 class App extends Component {
+  state = {
+    error: false
+  }
+
+  componentDidMount() {
+    exerRef.on('value', snapshot => {
+      const vals = snapshot.val();
+      this.setState({
+        error: vals.errors === 4
+      })
+    });
+  }
+
   render() {
     return (
       <div className="App">
         <Header />
         <div className="holder">
           <CourseName />
-          <HelpAlert
+          {this.state.error && <HelpAlert
             pic={AnaPic}
             studentName={"Ana"}
             // studentId={returnedId}
-          />
+          />}
             <div className="window-holder">
               <AssignmentName name="EXERCISE 1 - ADDITION"/>
               <ProgressBody />
