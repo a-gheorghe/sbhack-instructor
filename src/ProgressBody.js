@@ -31,6 +31,15 @@ class ProgressBody extends Component {
     });
   }
 
+  shouldComponentUpdate(nextProps, nextState) {
+    if(this.state.attempts === 5 && this.state.errors === 4) {
+      return true
+    } else {
+      return false
+    }
+  }
+
+
   // componentDidUpdate() {
   //   if (this.state.attempts === this.state.errors + 1) {
   //     var canvas = document.getElementsByTagName("canvas");
@@ -39,7 +48,6 @@ class ProgressBody extends Component {
   //   }
   // }
   render() {
-console.log(this.state)
     return (
       <div className="progress-body">
 
