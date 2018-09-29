@@ -264,3 +264,27 @@
 .class-progress-body {
   flex: 5;
 }
+
+.absolute-percent {
+  position: absolute;
+  top: 43%;
+  left: 44%;
+  font-size: 22px;
+  position: absolute;
+}
+
+.percent-holder {
+  position: relative;
+}
+
+.percent-holder p {
+  margin: 0;
+  font-family: MaaxTrial;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #333333
+}

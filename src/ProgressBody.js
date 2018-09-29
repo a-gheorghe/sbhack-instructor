@@ -1,55 +1,45 @@
 import React, { Component } from 'react';
 import { Doughnut } from 'react-chartjs-2';
-import { Chart } from 'chart.js';
 import CloseIcon from './images/icon-close.svg';
 import StudentCard from './StudentCard';
-import AnaPic from './images/ana-1x.jpg';
+import Chart from './Chart';
+import PieWithText from './PieWithText';
+import DonutWithTextBigger from './DonutWithTextBigger';
+import AnaPic from './images/ana-2x.jpg';
 import SophiePic from './images/sophie-2x.jpg';
 import HollyPic from './images/holly-2x.jpg';
 import SimonPic from './images/simon-2x.jpg';
+import JayPic from './images/jay-2x.jpg';
 import './App.css';
-
-
-const data = {
-      labels: ["Complete", "Incomplete"],
-      datasets: [{
-                data: [12, 5],
-                backgroundColor: ['#107e7a', '#e2e8ee'],
-                text: `${12 / (5+12)}`
-              }]
-        };
+import { exerRef } from "./firebase";
 
 class ProgressBody extends Component {
-  // constructor(props){
-  //   super(props);
-  //   this.state = {
-  //     percentageDone: data.datasets[0].data[0] / (data.datasets[1].data[1] + data.datasets[0].data[0]) * 100
+  constructor(props) {
+    super(props);
+    this.state = {
+      attempts: 0,
+      errors: 0
+    }
+  }
+  componentDidMount() {
+    exerRef.on('value', snapshot => {
+      const vals = snapshot.val();
+      this.setState({
+        attempts: vals.attempts,
+        errors: vals.errors
+      })
+    });
+  }
+
+  // componentDidUpdate() {
+  //   if (this.state.attempts === this.state.errors + 1) {
+  //     var canvas = document.getElementsByTagName("canvas");
+  //
+  //     let ComponentToRender = DonutWithTextBigger
   //   }
   // }
-  // componentDidMount() {
-  //   const data = {
-  //     labels: ["Complete", "Incomplete"],
-  //     datasets: [{
-  //               data: [12, 5],
-  //               backgroundColor: ['#107e7a', '#e2e8ee'],
-  //               text: `${this.state.percentageDone}`
-  //             }]
-  //           };
-  //
-  // }
-  //
-  // componentDidUpdate() {
-  //   const data = {
-  //     labels: ["Complete", "Incomplete"],
-  //     datasets: [{
-  //               data: [12, 5],
-  //               backgroundColor: ['#107e7a', '#e2e8ee'],
-  //               text: `${this.state.percentageDone}`
-  //             }]
-  //           };
-  //
-  // }
   render() {
+console.log(this.state)
     return (
       <div className="progress-body">
 
@@ -60,11 +50,11 @@ class ProgressBody extends Component {
           <div className="student-progress-body">
             <StudentCard
               studentId={1}
-              picture={HollyPic}
+              picture={JayPic}
             />
             <StudentCard studentId={2} picture={AnaPic}/>
             <StudentCard studentId={3} picture={SophiePic}/>
-            <StudentCard studentId={4} picture={SimonPic}/>
+            <StudentCard studentId={4} picture={HollyPic}/>
           </div>
         </div>
 
@@ -73,7 +63,17 @@ class ProgressBody extends Component {
           <p> Class Completion </p>
           </div>
           <div className="class-progress-body">
-          <Doughnut data={data} id="myChart"/>
+            {this.state.attempts === this.state.errors + 1 ?
+              <div className="percent-holder">
+                <div className="absolute-percent"> 88% </div>
+                <DonutWithTextBigger />
+              </div>
+              :
+              <div className="percent-holder">
+                <div className="absolute-percent"> 75% </div>
+                <PieWithText />
+              </div>
+            }
           </div>
         </div>
 

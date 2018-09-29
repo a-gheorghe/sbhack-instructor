@@ -17,22 +17,21 @@ import { exerRef } from "./firebase";
    // get studentId of the person that needs help
 class App extends Component {
   state = {
-    error: true
+    error: false
   }
 
   toggleErrorFalse = () => {
-    console.log('hello error is here')
     this.setState({ error: false })
   }
 
-  // componentDidMount() {
-  //   exerRef.on('value', snapshot => {
-  //     const vals = snapshot.val();
-  //     this.setState({
-  //       error: vals.errors === 4 && vals.attempts === vals.errors
-  //     })
-  //   });
-  // }
+  componentDidMount() {
+    exerRef.on('value', snapshot => {
+      const vals = snapshot.val();
+      this.setState({
+        error: vals.errors === 4 && vals.attempts === vals.errors
+      })
+    });
+  }
 
   render() {
     return (
@@ -44,7 +43,6 @@ class App extends Component {
             pic={AnaPic}
             studentName={"Ana"}
             toggleErrorFalse={this.toggleErrorFalse}
-            // studentId={returnedId}
           />}
             <div className="window-holder">
               <AssignmentName name="EXERCISE 1 -- ADDITION"/>
