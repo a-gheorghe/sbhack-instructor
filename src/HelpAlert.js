@@ -3,17 +3,21 @@ import CloseIcon from './images/icon-close.svg';
 import './App.css';
 
 
-// this.props.studentId
-// componentDidMount --> retrieve the student info (name, picture)
+
+
 class HelpAlert extends Component {
+  // imageClick = () => {
+  //   const helpComp = document.getElementById("help-alert");
+  //   helpComp.remove();
+  // }
   render() {
     return (
-      <div className="help-alert">
+      <div className="help-alert" id='help-alert'>
         <span>
           <img className="picture" src={this.props.pic} />
           <p> Hey, <b>{this.props.studentName}</b> could use a helping hand! </p>
         </span>
-        <img className="right-style" src={CloseIcon} />
+        <img className="right-style" src={CloseIcon} onClick={this.props.toggleErrorFalse}/>
       </div>
     );
   }
