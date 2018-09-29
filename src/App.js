@@ -1,24 +1,41 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Card from './Card';
+import CourseName from './CourseName';
+import StudentCard from './StudentCard';
+import Header from './Header';
+import AnaPic from './images/ana-2x.jpg';
+import HelpAlert from './HelpAlert';
+import AssignmentName from './AssignmentName';
+import ProgressBody from './ProgressBody'
 import './App.css';
-import { fetchAnswers } from "./actions";
-import { connect } from "react-redux";
 
+
+//component did Mount --
+  // check database to see if anyone needs help
+  // if 3 sequential incorrect attempts
+  // or if someone has specifically requested help
+   // get studentId of the person that needs help
 class App extends Component {
-  componentWillMount() {
-    this.props.fetchAnswers();
-  }
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">CLC Instructor Portal</h1>
-        </header>
-        <button>Login</button>
+        <Header />
+        <div className="holder">
+          <CourseName />
+          <HelpAlert
+            pic={AnaPic}
+            studentName={"Ana"}
+            // studentId={returnedId}
+          />
+            <div className="window-holder">
+              <AssignmentName name="EXERCISE 1 - ADDITION"/>
+              <ProgressBody />
+            </div>
+          </div>
       </div>
     );
   }
 }
 
 
-export default connect(null, { fetchAnswers })(App);
+export default App;
