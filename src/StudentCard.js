@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
 import './App.css';
+import { exerRef } from "./firebase";
 
 
 /* <div className="lozenge">
@@ -24,7 +25,7 @@ const response = {
       difficulty: 'Intermediate'
     },
   4: {
-    name: 'Simon GrossMan',
+    name: 'Simon Grossman',
     scores: [],
     difficulty: 'Easy'
   }
@@ -35,8 +36,32 @@ class StudentCard extends Component {
   // search database for student id and retrieve
   //scores array, picture, name, current difficulty level
 
+  componentDidMount() {
+    exerRef.on('value', snapshot => {
+      const vals = snapshot.val();
+      this.setState({
+        attempts: vals.attempts,
+        errors: vals.errors
+      })
+    });
+  }
+
+  componentDidUpdate() {
+    const { errors, attempts } = this.state;
+    function fillArrayWithNumbers(n) {
+      const arr = Array.apply(null, Array(n));
+      return arr.map(() => { return 0 });
+    }
+    if(errors === attempts) {
+      response[4].scores = fillArrayWithNumbers(attempts);
+    } else if(attempts === errors + 1) {
+      response[4].scores[attempts + 1] = 1;
+    }
+  }
+
 
   render() {
+    console.log(this.state)
     return (
       <div className="individual-student-card">
         <div className="individual-left-info">
