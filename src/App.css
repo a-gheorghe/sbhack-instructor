@@ -1,3 +1,31 @@
+
+@font-face {
+  font-family: "MaaxTrial";
+  src: url("./fonts/MaaxTrial-Regular.otf");
+}
+@font-face {
+  font-family: "MaaxTrial";
+  src: url("./fonts/MaaxTrial-Bold.otf");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "MaaxTrial";
+  src: url("./fonts/MaaxTrial-Italic.otf");
+  font-style: italic;
+}
+
+@keyframes snap-in {
+  0% { transform: scale(2.05); opacity: 0 }
+  50% { transform: scale(0.98); opacity: 1 }
+  100% { transform: scale(1); opacity: 1 }
+}
+
+@keyframes big-in {
+  0% { transform: scale(2.05); opacity: 0 }
+  50% { transform: scale(0.98); opacity: 1 }
+  100% { transform: scale(1); opacity: 1 }
+}
+
 .App {
   text-align: left;
   height: 100vh;
@@ -217,6 +245,7 @@
   border-radius: 50%;
   background-color: #107e7a;
   margin: 2px;
+  animation: big-in 0.3s ease-in-out;
 }
 
 .red-circle {
@@ -226,6 +255,7 @@
   border-radius: 50%;
   background-color: #ef081a;
   margin: 2px;
+  animation: snap-in 0.3s ease-in-out;
 }
 
 .individual-right-info {
