@@ -14,7 +14,7 @@ class ProgressBody extends Component {
 
         <div className="left-progress">
           <div className="student-progress-title">
-            <p> Individual Student Progress</p>
+            <p>Student Progress</p>
           </div>
           <div className="student-progress-body">
             <StudentCard

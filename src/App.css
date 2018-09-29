@@ -108,7 +108,7 @@
 
 .assignment-name {
   width: 100%;
-  border-bottom: 3px solid #e2e8ee;
+  border-bottom: 1px solid #e2e8ee;
   font-family: MaaxTrial;
   font-weight: bold;
   font-style: normal;
@@ -129,6 +129,7 @@
   left: 30px;
   margin: 0;
   padding: 0;
+  font-size: 14px;
 }
 
 .right-chevron {
@@ -189,7 +190,7 @@
 .student-progress-title {
   flex: 1;
   text-align: left;
-  border-right: 3px solid #e2e8ee;
+  border-right: 1px solid #e2e8ee;
 }
 
 .student-progress-title p, .class-progress-title p {
@@ -203,7 +204,7 @@
   flex: 5;
   display: flex;
   flex-direction: column;
-  border-right: 3px solid #e2e8ee;
+  border-right: 1px solid #e2e8ee;
 }
 
 .individual-student-card {
@@ -217,6 +218,7 @@
   display: flex;
   flex: 1;
   padding-left: 20px;
+  align-items: center;
 }
 
 .individual-left-info p {
@@ -251,12 +253,13 @@
 }
 
 .dot-container {
+  margin-top: 6px;
   flex: 1;
 }
 
 .green-circle {
-  height: 14px;
-  width: 14px;
+  height: 8px;
+  width: 8px;
   display: inline-block;
   border-radius: 50%;
   background-color: #107e7a;
@@ -265,8 +268,8 @@
 }
 
 .red-circle {
-  height: 14px;
-  width: 14px;
+  height: 8px;
+  width: 8px;
   display: inline-block;
   border-radius: 50%;
   background-color: #ef081a;
