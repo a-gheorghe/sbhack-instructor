@@ -10,13 +10,13 @@ import { exerRef } from "./firebase";
 */
 const response = {
   1: {
-      name: 'Holly McLean',
-      scores: [1, 1, 0],
+      name: 'Jay Hiranandani',
+      scores: [1, 1],
       difficulty: 'Advanced'
     },
   2: {
       name: 'Ana-Stefania Gheorghe',
-      scores: [0, 0, 0],
+      scores: [0, 0, 1],
       difficulty: 'Easy'
     },
   3: {
@@ -25,8 +25,8 @@ const response = {
       difficulty: 'Intermediate'
     },
   4: {
-    name: 'Simon Grossman',
-    scores: [],
+    name: 'Holly McLean',
+    scores: [0, 0, 0, 0],
     difficulty: 'Easy'
   }
 }

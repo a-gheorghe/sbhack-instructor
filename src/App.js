@@ -20,11 +20,15 @@ class App extends Component {
     error: false
   }
 
+  toggleErrorFalse = () => {
+    this.setState({ error: false })
+  }
+
   componentDidMount() {
     exerRef.on('value', snapshot => {
       const vals = snapshot.val();
       this.setState({
-        error: vals.errors === 4
+        error: vals.errors === 4 && vals.attempts === vals.errors
       })
     });
   }
@@ -37,11 +41,11 @@ class App extends Component {
           <CourseName />
           {this.state.error && <HelpAlert
             pic={AnaPic}
-            studentName={"Simon"}
-            // studentId={returnedId}
+            studentName={"Holly"}
+            toggleErrorFalse={this.toggleErrorFalse}
           />}
             <div className="window-holder">
-              <AssignmentName name="EXERCISE 1 - ADDITION"/>
+              <AssignmentName name="EXERCISE 1 -- ADDITION"/>
               <ProgressBody />
             </div>
           </div>

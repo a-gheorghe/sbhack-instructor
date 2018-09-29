@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160">
+    <g fill="none" fill-rule="evenodd">
+        <g fill-rule="nonzero" stroke-width="10" transform="translate(5 5)">
+            <circle cx="75" cy="75" r="75" stroke="#E2E8EE"/>
+            <path stroke="#107E7A" d="M37.863 140.175C48.813 146.427 61.49 150 75 150c41.421 0 75-33.579 75-75S116.421 0 75 0"/>
+        </g>
+        <text fill="#333" font-family="MaaxTrial-Bold, Maax Trial" font-size="30" font-weight="bold" transform="translate(5 5)">
+            <tspan x="43" y="82">65%</tspan>
+        </text>
+        <text fill="#333" font-family="MaaxTrial-Regular, Maax Trial" font-size="16" transform="translate(5 5)">
+            <tspan x="35" y="98">completed</tspan>
+        </text>
+    </g>
+</svg>
